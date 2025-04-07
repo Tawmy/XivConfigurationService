@@ -9,3 +9,7 @@
     environment:
       LOGGING__LOGLEVEL__DEFAULT: Information
       LOGGING__LOGLEVEL__MICROSOFT.ASPNETCORE: Warning
+      ASPNETCORE_FORWARDEDHEADERS_ENABLED: true # necessary for OIDC in container, otherwise redirect URI uses HTTP
+      OIDC_AUTHORITY: https://auth.tawmy.dev/realms/xiv
+      OIDC_CLIENT_ID: config-service
+      OIDC_CLIENT_SECRET:

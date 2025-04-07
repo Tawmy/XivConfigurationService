@@ -1,7 +1,14 @@
 @import "tailwindcss";
 
+@layer components {
+    .h1 {
+        font-size: var(--text-4xl);
+        margin-bottom: calc(var(--spacing) * 3);
+    }
+}
+
 @layer base {
-    
+
     h1:focus {
         outline: none;
     }

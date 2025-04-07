@@ -1,0 +1,35 @@
+@page "/debug/claims"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@attribute [Authorize]
+@rendermode InteractiveAuto
+
+<PageTitle>Claims</PageTitle>
+
+<h1 class="h1">Claims</h1>
+
+<div class="flex flex-col gap-4">
+
+    <AuthorizeView>
+
+        <div>
+            <QuickGrid Items="context.User.Claims.AsQueryable()" Class="border">
+                <PropertyColumn Property="@(x => CreateClaimTypeDisplayStr(x.Type))" Title="Claim" Sortable="true"/>
+                <PropertyColumn Property="@(x => x.Value)"/>
+            </QuickGrid>
+        </div>
+
+    </AuthorizeView>
+
+</div>
+
+@code {
+
+    private static string CreateClaimTypeDisplayStr(string claimType)
+    {
+        return claimType.Contains("http://", StringComparison.OrdinalIgnoreCase)
+            ? claimType.Split('/').Last()
+            : claimType;
+    }
+
+}
