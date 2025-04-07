@@ -6,3 +6,6 @@ riderModule.iml
 node_modules
 XivConfigurationService/XivConfigurationService/wwwroot/css/tailwind.css
 .DS_Store
+**/.idea/workspace.xml
+compose.generated.override.yml
+*.DotSettings.user
