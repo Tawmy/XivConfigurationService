@@ -1,0 +1,3 @@
+[submodule "AspNetCoreExtensions"]
+	path = AspNetCoreExtensions
+	url = https://github.com/Tawmy/AspNetCoreExtensions.git
