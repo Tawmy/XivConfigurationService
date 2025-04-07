@@ -3,3 +3,6 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+node_modules
+XivConfigurationService/XivConfigurationService/wwwroot/css/tailwind.css
+.DS_Store

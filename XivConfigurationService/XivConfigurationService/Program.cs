@@ -20,7 +20,6 @@ else
     app.UseExceptionHandler("/Error", true);
 }
 
-
 app.UseAntiforgery();
 
 app.MapStaticAssets();
