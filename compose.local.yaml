@@ -1,0 +1,7 @@
+﻿services:
+  service:
+    environment:
+      LOGGING__LOGLEVEL__DEFAULT: Debug
+      LOGGING__LOGLEVEL__ASPNETCORE: Debug
+    labels:
+      - dev.orbstack.domains=config.ffxiv.local

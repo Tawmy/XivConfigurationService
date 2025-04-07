@@ -1,0 +1,11 @@
+﻿services:
+  service:
+    image: xiv-configuration-service
+    container_name: xiv-configuration-service
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: XivConfigurationService/XivConfigurationService/Dockerfile
+    environment:
+      LOGGING__LOGLEVEL__DEFAULT: Information
+      LOGGING__LOGLEVEL__MICROSOFT.ASPNETCORE: Warning
