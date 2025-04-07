@@ -1,0 +1,8 @@
+﻿<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="compose.yaml" />
+    <File Path="compose.local.yaml" />
+  </Folder>
+  <Project Path="XivConfigurationService\XivConfigurationService.Client\XivConfigurationService.Client.csproj" Type="Classic C#" />
+  <Project Path="XivConfigurationService\XivConfigurationService\XivConfigurationService.csproj" Type="Classic C#" />
+</Solution>
