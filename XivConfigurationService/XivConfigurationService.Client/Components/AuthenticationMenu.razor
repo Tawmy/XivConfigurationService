@@ -1,0 +1,12 @@
+<AuthorizeView>
+    <Authorized>
+        <form action="authentication/logout" method="post">
+            <AntiforgeryToken/>
+            @(context.User.Identity?.Name ?? "NO NAME")<br/>
+            <button>Logout</button>
+        </form>
+    </Authorized>
+    <NotAuthorized>
+        <a href="authentication/login">Login</a>
+    </NotAuthorized>
+</AuthorizeView>

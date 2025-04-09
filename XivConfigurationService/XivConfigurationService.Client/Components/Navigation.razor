@@ -1,0 +1,27 @@
+@using Microsoft.AspNetCore.Components.Sections
+@rendermode InteractiveAuto
+<nav class="bg-green-100
+                md:row-start-1 md:row-end-3">
+    <h1 class="h1 cursor-pointer"
+        @onclick="@ToggleNavMenu">
+        <SectionOutlet SectionId="HeaderText"/>
+    </h1>
+
+    <div class="@(_navMenuOpen ? string.Empty : "hidden")">
+        <a href="debug/claims">debug/claims</a>
+    </div>
+
+</nav>
+
+@code {
+
+    public static object HeaderText = new();
+
+    private bool _navMenuOpen;
+
+    private void ToggleNavMenu()
+    {
+        _navMenuOpen = !_navMenuOpen;
+    }
+
+}

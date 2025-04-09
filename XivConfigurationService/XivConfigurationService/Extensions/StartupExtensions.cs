@@ -19,7 +19,12 @@ internal static class StartupExtensions
 
         services.AddKeycloakAuthentication(kcConfig,
             x => x.AuthenticationScheme = authenticationScheme,
-            x => x.ClaimActions.MapJsonKey("discordId", "discord_id"));
+            x =>
+            {
+                x.Scope.Add("discord");
+                x.ClaimActions.MapJsonKey("discord_id", "discord_id");
+                x.ClaimActions.MapJsonKey("discord_avatar", "discord_avatar");
+            });
 
         services.ConfigureCookieOidcRefresh(CookieAuthenticationDefaults.AuthenticationScheme,
             authenticationScheme);

@@ -1,19 +1,21 @@
+@rendermode InteractiveAuto
 @page "/debug/claims"
 @using Microsoft.AspNetCore.Authorization
-@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Sections
+
 @attribute [Authorize]
-@rendermode InteractiveAuto
 
 <PageTitle>Claims</PageTitle>
+<SectionContent SectionId="Navigation.HeaderText">
+    Claims
+</SectionContent>
 
-<h1 class="h1">Claims</h1>
-
-<div class="flex flex-col gap-4">
+<div class="bg-red-100">
 
     <AuthorizeView>
 
         <div>
-            <QuickGrid Items="context.User.Claims.AsQueryable()" Class="border">
+            <QuickGrid Items="context.User.Claims.AsQueryable()">
                 <PropertyColumn Property="@(x => CreateClaimTypeDisplayStr(x.Type))" Title="Claim" Sortable="true"/>
                 <PropertyColumn Property="@(x => x.Value)"/>
             </QuickGrid>

@@ -5,6 +5,7 @@ riderModule.iml
 /_ReSharper.Caches/
 node_modules
 XivConfigurationService/XivConfigurationService/wwwroot/css/tailwind.css
+XivConfigurationService/XivConfigurationService.Client/wwwroot/css/tailwind_client.css
 .DS_Store
 **/.idea/workspace.xml
 compose.generated.override.yml

@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "tailwindcss": "^4.1.3",
+    "@tailwindcss/cli": "^4.1.3"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "css:build": "npx @tailwindcss/cli -i ./Styles/source.css -o ./wwwroot/css/tailwind_client.css --minify"
+  }
+}
