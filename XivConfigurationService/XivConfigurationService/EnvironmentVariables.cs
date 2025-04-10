@@ -1,6 +1,6 @@
 namespace XivConfigurationService;
 
-public class EnvironmentVariables
+internal class EnvironmentVariables
 {
     /// <summary>
     ///     OIDC Authority, for Keycloak it's the realm, eg. https://auth.smapone.com/realms/dev

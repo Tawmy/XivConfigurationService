@@ -1,19 +1,26 @@
+@using System.Text
 @using Microsoft.AspNetCore.Components.Sections
 @rendermode InteractiveAuto
+@inject NavigationManager NavManager
+
 <nav class="bg-green-100
                 md:row-start-1 md:row-end-3">
-    <h1 class="h1 cursor-pointer"
+    <h1 class="h1 cursor-pointer md:hidden"
         @onclick="@ToggleNavMenu">
         <SectionOutlet SectionId="HeaderText"/>
     </h1>
 
-    <div class="@(_navMenuOpen ? string.Empty : "hidden")">
-        <a href="debug/claims">debug/claims</a>
+    <div class="@(_navMenuOpen ? "flex" : "hidden") md:flex flex-col">
+        <NavLink href="/">home</NavLink>
+        <NavLink href="debug/claims">debug/claims</NavLink>
+        <NavLink href="@CreateKeycloakAccountConsoleReferrerUri()">account management</NavLink>
     </div>
 
 </nav>
 
 @code {
+
+    [CascadingParameter] public string? OidcClientId { get; set; }
 
     public static object HeaderText = new();
 
@@ -22,6 +29,19 @@
     private void ToggleNavMenu()
     {
         _navMenuOpen = !_navMenuOpen;
+    }
+
+    private string CreateKeycloakAccountConsoleReferrerUri()
+    {
+        var sb = new StringBuilder("https://auth.tawmy.dev/realms/xiv/account");
+
+        if (Environment.GetEnvironmentVariable("OIDC_CLIENT_ID") is { } oidcClientId)
+        {
+            var currentUri = NavManager.Uri;
+            sb.Append($"?referrer={oidcClientId}&referrer_uri={currentUri}");
+        }
+
+        return sb.ToString();
     }
 
 }
