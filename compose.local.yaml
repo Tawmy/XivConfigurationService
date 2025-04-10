@@ -4,4 +4,4 @@
       LOGGING__LOGLEVEL__DEFAULT: Debug
       LOGGING__LOGLEVEL__ASPNETCORE: Debug
     labels:
-      - dev.orbstack.domains=config.ffxiv.local
+      - dev.orbstack.domains=config.eorzea.local
